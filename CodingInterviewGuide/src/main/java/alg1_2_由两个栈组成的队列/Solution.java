@@ -12,25 +12,17 @@ import java.util.Stack;
 public class Solution {
     public static void main(String[] args) {
         TwoStackQueue twoStackQueue = new Solution().new TwoStackQueue();
-//        twoStackQueue.add(1);
-//        twoStackQueue.add(2);
-//        twoStackQueue.add(3);
-//        System.out.println(twoStackQueue.peek());
-//        System.out.println(twoStackQueue.poll());
-//        System.out.println(twoStackQueue.peek());
-
-
         Scanner scanner = new Scanner(System.in);
-        int n = Integer.valueOf(scanner.nextLine());
-        String string;
+        int n = Integer.parseInt(scanner.nextLine());
+        String s;
         for (int i = 0; i < n; i++) {
-            string = scanner.nextLine();
-            if (string.equals("poll")) {
+            s = scanner.nextLine();
+            if (s.equals("poll")) {
                 twoStackQueue.poll();
-            } else if (string.equals("peek")) {
+            } else if (s.equals("peek")) {
                 System.out.println(twoStackQueue.peek());
             } else {
-                twoStackQueue.add(Integer.valueOf(string.split(" ")[1]));
+                twoStackQueue.add(Integer.valueOf(s.split(" ")[1]));
             }
         }
     }
@@ -57,7 +49,6 @@ public class Solution {
                     stackPop.push(value);
                 }
             }
-            //todo 不为空就没有任何操作？
         }
 
         public void add(int num) {

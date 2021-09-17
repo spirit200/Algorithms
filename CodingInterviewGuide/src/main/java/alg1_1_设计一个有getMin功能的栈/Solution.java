@@ -1,5 +1,6 @@
 package alg1_1_设计一个有getMin功能的栈;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -11,13 +12,26 @@ import java.util.Stack;
 public class Solution {
     public static void main(String[] args) {
         MyStack2 mystack = new Solution().new MyStack2();
-        mystack.push(3);
-        mystack.push(2);
-        mystack.push(1);
-        System.out.println(mystack.getMin());
-        mystack.pop();
-        int res = mystack.getMin();
-        System.out.println(res);
+//        mystack.push(3);
+//        mystack.push(2);
+//        mystack.push(1);
+//        System.out.println(mystack.getMin());
+//        mystack.pop();
+//        int res = mystack.getMin();
+//        System.out.println(res);
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        String s;
+        for (int i = 0; i < n; i++) {
+            s = scanner.nextLine();
+            if (s.equals("pop")) {
+                mystack.pop();
+            } else if (s.equals("getMin")) {
+                System.out.println(mystack.getMin());
+            } else {
+                mystack.push(Integer.parseInt(s.split(" ")[1]));
+            }
+        }
     }
 
     class MyStack {
